@@ -1,7 +1,8 @@
-import React, { useContext} from 'react'
+import React, { useContext } from 'react'
 import './foodItem.css'
 import { assets } from '../../assets/assets'
 import { StoreContext } from '../../context/StoreContext'
+import { Link } from 'react-router-dom'
 const FoodItem = ({ id, name, price, description, image }) => {
 
 
@@ -30,8 +31,10 @@ const FoodItem = ({ id, name, price, description, image }) => {
                     {description}
                 </p>
                 <div className='food-item-price-order'>
-                <p className="food-item-price">${price}</p>
-                <button>Place Order</button>
+                    <p className="food-item-price">${price}</p>
+                    <Link to={'/cart'}>
+                        <button>Place Order</button>
+                        </Link>
                 </div>
             </div>
         </div>
